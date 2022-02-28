@@ -286,7 +286,7 @@ class Dropdown extends React.Component {
       onClick: createChainedFunction(child.props.onClick, this.handleClick),
       onKeyDown: createChainedFunction(
         child.props.onKeyDown,
-        this.handleKeyDown
+        child.props.disableNativeKeyDown ? null : this.handleKeyDown
       )
     });
   }
